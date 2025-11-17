@@ -1,0 +1,15 @@
+# Явно указываем, что файлы с этими расширениями — C++
+*.cpp linguist-language=C++
+*.h linguist-language=C++
+*.hpp linguist-language=C++
+*.cc linguist-language=C++
+*.cxx linguist-language=C++
+
+# Игнорируем ассемблерные файлы в статистике (если они есть)
+*.s linguist-vendored
+*.asm linguist-vendored
+
+# Дополнительные настройки (опционально)
+# Игнорируем папки/файлы, которые не должны влиять на статистику
+examples/* linguist-vendored
+tests/* linguist-vendored
