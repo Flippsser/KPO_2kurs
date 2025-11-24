@@ -1,0 +1,8 @@
+﻿  In.cpp
+  Lab_14.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_15\Lab_14\Lab_14.cpp(68,23): warning C4838: Преобразование из "int" в "short" требует сужающего преобразования.
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_15\Lab_14\Lab_14.cpp(68,38): warning C4838: Преобразование из "int" в "short" требует сужающего преобразования.
+  Log.cpp
+  Out.cpp
+  Создание кода...
+  Lab_14.vcxproj -> C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_15\x64\Debug\Lab_14.exe
