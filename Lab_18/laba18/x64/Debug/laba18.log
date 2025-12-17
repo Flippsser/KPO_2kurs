@@ -1,0 +1,105 @@
+﻿  Error.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "Error.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  FST.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "FST.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\FST.cpp(73,23): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  GRB.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "GRB.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Rule.h(7,9): warning C4005: NS: изменение макроопределения
+  (компиляция исходного файла "GRB.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\GRB.h(3,9):
+      см. предыдущее определение "NS"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Rule.h(8,9): warning C4005: TS: изменение макроопределения
+  (компиляция исходного файла "GRB.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\GRB.h(4,9):
+      см. предыдущее определение "TS"
+  
+  IT.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "IT.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  In.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\In.cpp(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "In.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\In.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  LT.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "LT.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  Lexer.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "Lexer.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\LT.h(32,21): warning C4838: Преобразование из "unsigned int" в "int" требует сужающего преобразования.
+  (компиляция исходного файла "Lexer.cpp")
+  
+  Log.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "Log.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  MFST.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "MFST.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(21,5): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "ERROR_THROW"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(131,7): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(149,5): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(156,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(171,3): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE6"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(187,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE5"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(219,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(226,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(229,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(232,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(238,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(274,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "ERROR_THROW"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\MFST.cpp(296,66): warning C4267: =: преобразование из "size_t" в "short"; возможна потеря данных
+  Out.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "Out.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  Parm.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "Parm.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Parm.cpp(50,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Parm.cpp(61,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  SE_lab18.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(7,9): warning C4005: ERROR_ENTRY_NODEF: изменение макроопределения
+  (компиляция исходного файла "SE_lab18.cpp")
+      C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\laba18\Error.h(6,9):
+      см. предыдущее определение "ERROR_ENTRY_NODEF"
+  
+  Создание кода...
+  laba18.vcxproj -> C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_18\x64\Debug\laba18.exe

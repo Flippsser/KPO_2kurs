@@ -1,0 +1,119 @@
+Microsoft (R) Macro Assembler Version 14.44.35217.0	    12/16/25 17:27:50
+asm03.asm						     Page 1 - 1
+
+
+				.386
+				.model flat, stdcall
+				.stack 4096
+
+				includelib kernel32.lib
+				includelib user32.lib
+				ExitProcess PROTO, dwExitCode:DWORD
+
+ 00000000			.data
+ 00000000 10 20 30 40		myBytes    BYTE    10h, 20h, 30h, 40h
+ 00000004 008A 0038 0044	myWords    WORD    8Ah, 38h, 44h, 5Fh, 99h
+	   005F 0099
+ 0000000E 00000001		myDoubles  DWORD   1, 2, 3, 4, 5, 6
+	   00000002
+	   00000003
+	   00000004
+	   00000005
+	   00000006
+ 00000026 0000000E R		myPointer  DWORD   myDoubles
+
+ 0000002A 0000000F		myArray    DWORD   15, 8, 1, 25, 12, 7, 30
+	   00000008
+	   00000001
+	   00000019
+	   0000000C
+	   00000007
+	   0000001E
+ 00000046 00000007		arraySize  DWORD   7
+
+ 00000000			.code
+ 00000000			main PROC
+
+ 00000000  BE 00000000		    mov ESI, 0
+ 00000005  8B 86 0000000E R	    mov EAX, myDoubles[ESI]
+ 0000000B  8B 96 0000000E R	    mov EDX, [myDoubles + ESI]
+
+ 00000011  B8 00000000		    mov EAX, 0
+ 00000016  8B 0D 00000046 R	    mov ECX, arraySize
+ 0000001C  BE 00000000		    mov ESI, 0
+
+ 00000021			calculate_sum:
+ 00000021  03 04 B5		    add EAX, myArray[ESI*4]
+	   0000002A R
+ 00000028  46			    inc ESI
+ 00000029  E2 F6		    loop calculate_sum
+
+ 0000002B  BB 00000001		    mov EBX, 1
+ 00000030  8B 0D 00000046 R	    mov ECX, arraySize
+ 00000036  BE 00000000		    mov ESI, 0
+
+ 0000003B			check_for_zero:
+ 0000003B  83 3C B5		    cmp myArray[ESI*4], 0
+	   0000002A R 00
+ 00000043  74 05		    je zero_detected
+ 00000045  46			    inc ESI
+ 00000046  E2 F3		    loop check_for_zero
+ 00000048  EB 05		    jmp check_complete
+
+ 0000004A			zero_detected:
+ 0000004A  BB 00000000		    mov EBX, 0
+
+ 0000004F			check_complete:
+				    INVOKE ExitProcess, 0
+ 00000056			main ENDP
+				END main
+Microsoft (R) Macro Assembler Version 14.44.35217.0	    12/16/25 17:27:50
+asm03.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000004A DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000056 DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000056 Public STDCALL
+  calculate_sum  . . . . . . . .	L Near	 00000021 _TEXT	
+  check_for_zero . . . . . . . .	L Near	 0000003B _TEXT	
+  zero_detected  . . . . . . . .	L Near	 0000004A _TEXT	
+  check_complete . . . . . . . .	L Near	 0000004F _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+arraySize  . . . . . . . . . . .	DWord	 00000046 _DATA	
+myArray  . . . . . . . . . . . .	DWord	 0000002A _DATA	
+myBytes  . . . . . . . . . . . .	Byte	 00000000 _DATA	
+myDoubles  . . . . . . . . . . .	DWord	 0000000E _DATA	
+myPointer  . . . . . . . . . . .	DWord	 00000026 _DATA	
+myWords  . . . . . . . . . . . .	Word	 00000004 _DATA	
+
+	   0 Warnings
+	   0 Errors

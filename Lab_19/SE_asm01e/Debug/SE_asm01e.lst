@@ -1,0 +1,254 @@
+Microsoft (R) Macro Assembler Version 14.44.35217.0	    12/16/25 15:14:21
+SE_asm01e.asm						     Page 1 - 1
+
+
+				.586P                                                               
+				.MODEL FLAT, STDCALL                                                
+				;includelib ucrt.lib                                                
+				includelib libucrt.lib
+				includelib kernel32.lib                                             
+				includelib "..\Debug\SE_asm01d.lib"
+				
+				ExitProcess         PROTO   : DWORD                                         
+				system              PROTO C : DWORD                                         
+				GetStdHandle        PROTO   : DWORD                                         
+				printConsole        PROTO : DWORD, : DWORD                                  
+				                                                                            
+				WriteConsoleA       PROTO   : DWORD, : DWORD, : DWORD, : DWORD, : DWORD     
+				SetConsoleTitleA    PROTO   : DWORD                                     
+				
+				EXTRN getmin : proc
+				EXTRN getmax : proc
+				EXTRN get_pause : proc
+				
+				SetConsoleOutputCP  PROTO : DWORD                                   
+				                                                                    
+				SetConsoleCP PROTO : DWORD                                          
+				
+				
+				.STACK 4096                                                         
+				
+ 00000000			.CONST                                                              
+ = 0000000A			endl        equ 0ah                                                 
+ 00000000 0A 00			str_endl    byte endl, 0                                            
+ 00000002 70 61 75 73 65	str_pause   db 'pause', 0
+	   00
+				
+ 00000000			.DATA                                                               
+ 00000000 FFFFFFFB		Array           SDWORD   -5, 5, 23, -1, 25, 9, -4, 22, 9, 0 
+	   00000005
+	   00000017
+	   FFFFFFFF
+	   00000019
+	   00000009
+	   FFFFFFFC
+	   00000016
+	   00000009
+	   00000000
+ 00000028 C7 E0 E4 E0 ED	consoleTitle    BYTE    'Задание 6',0           
+	   E8 E5 20 36 00
+ 00000032 C7 E0 E4 E0 F7	text            BYTE     "Задача : getmax + getmin = "
+	   E0 20 3A 20 67
+	   65 74 6D 61 78
+	   20 2B 20 67 65
+	   74 6D 69 6E 20
+	   3D 20
+ 0000004D  00000028 [		string          BYTE     40 dup(0)
+	    00
+	   ]
+ 00000075 CC E8 ED E8 EC	min_string      BYTE    "Минимальное значение = "
+	   E0 EB FC ED EE
+	   E5 20 E7 ED E0
+	   F7 E5 ED E8 E5
+	   20 3D 20
+ 0000008C  00000028 [		min_str         BYTE     40 dup(0)
+	    00
+	   ]
+ 000000B4 CC E0 EA F1 E8	max_string      BYTE    "Максимальное значение = "
+	   EC E0 EB FC ED
+	   EE E5 20 E7 ED
+	   E0 F7 E5 ED E8
+	   E5 20 3D 20
+ 000000CC  00000028 [		max_str         BYTE     40 dup(0)
+	    00
+	   ]
+				
+ 000000F4 00000000		messageSize     DWORD   ?
+ 000000F8 00000000		min             SDWORD  ?
+ 000000FC 00000000		max             SDWORD  ?
+ 00000100 00000000		result          SDWORD  ?
+				
+ 00000000			.CODE                                                               
+				
+ 00000000			int_to_char PROC uses eax ebx ecx edi esi,
+				                pstr        : dword, 
+				                intfield    : sdword 
+				
+ 00000008  8B 7D 08		    mov edi, pstr
+ 0000000B  8B 45 0C		    mov eax, intfield                                               
+ 0000000E  99			    cdq
+ 0000000F  A9 80000000		    test eax, 80000000h                                             
+ 00000014  74 06		    jz convert_positive
+ 00000016  F7 D8		    neg eax
+ 00000018  C6 07 2D		    mov byte ptr [edi], '-' 
+ 0000001B  47			    inc edi
+				
+ 0000001C			convert_positive:
+ 0000001C  BB 0000000A		    mov ebx, 10
+ 00000021  33 C9		    xor ecx, ecx  
+ 00000023  85 C0		    test eax, eax
+ 00000025  74 1F		    jz store_zero
+				
+ 00000027			convert_loop:
+ 00000027  33 D2		    xor edx, edx
+ 00000029  F7 F3		    div ebx
+ 0000002B  52			    push edx
+ 0000002C  41			    inc ecx
+ 0000002D  85 C0		    test eax, eax
+ 0000002F  75 F6		    jnz convert_loop
+				
+ 00000031			store_digits:
+ 00000031  5A			    pop edx
+ 00000032  80 C2 30		    add dl, '0'
+ 00000035  88 17		    mov [edi], dl
+ 00000037  47			    inc edi
+ 00000038  E2 F7		    loop store_digits
+				
+ 0000003A  C6 07 00		    mov byte ptr [edi], 0  
+				    ret
+				
+ 00000046			store_zero:
+ 00000046  C6 07 30		    mov byte ptr [edi], '0'
+ 00000049  47			    inc edi
+ 0000004A  C6 07 00		    mov byte ptr [edi], 0  
+				    ret
+				    
+ 00000056			int_to_char ENDP
+				
+				
+ 00000056			main PROC                                                           
+ 00000056			START :                                                             
+				        INVOKE SetConsoleOutputCP, 1251d
+				        INVOKE SetConsoleCP, 1251d
+ 0000006A  6A 0A		        push LENGTHOF Array                                         
+ 0000006C  68 00000000 R	        push OFFSET Array
+ 00000071  E8 00000000 E	        call getmin
+ 00000076  A3 000000F8 R	        mov min, eax
+				        INVOKE int_to_char, OFFSET min_str, min
+				        INVOKE printConsole, OFFSET min_string, OFFSET  consoleTitle        
+				        INVOKE printConsole, OFFSET str_endl, OFFSET  consoleTitle
+ 000000A9  6A 0A		        push LENGTHOF Array                                         
+ 000000AB  68 00000000 R	        push OFFSET Array
+ 000000B0  E8 00000000 E	        call getmax                     
+ 000000B5  A3 000000FC R	        mov max, eax
+				        INVOKE int_to_char, OFFSET max_str, max
+				        INVOKE printConsole, OFFSET max_string, OFFSET  consoleTitle        
+				        INVOKE printConsole, OFFSET str_endl, OFFSET  consoleTitle
+ 000000E8  03 05 000000F8 R	        add eax, min                                                        
+ 000000EE  A3 00000100 R	        mov result, eax
+				        INVOKE int_to_char, OFFSET string, result
+				        INVOKE printConsole, OFFSET text, OFFSET  consoleTitle      
+				        INVOKE printConsole, OFFSET str_endl, OFFSET  consoleTitle
+				                                                                    
+ 00000121  E8 00000000 E	        call get_pause                                              
+ 00000126  6A FF		        push - 1                                                    
+ 00000128  E8 00000000 E	        call ExitProcess                                            
+				
+				
+ 0000012D			main ENDP                                                           
+ 0000012D			printConsole     PROC uses eax ebx ecx edi esi,
+				                        pstr    : dword,
+				                        ptitle  : dword
+				
+				    INVOKE SetConsoleTitleA, ptitle
+				    INVOKE GetStdHandle, -11
+ 00000144  8B 75 08		    mov esi, pstr                                                   
+ 00000147  BF FFFFFFFF		    mov edi, -1                                                     
+ 0000014C			count:                                                              
+ 0000014C  47			    inc edi                                                         
+ 0000014D  80 3C 3E 00		    cmp byte ptr [esi+edi], 0
+ 00000151  75 F9		    jne count                                                       
+				
+				    INVOKE WriteConsoleA, eax, pstr, edi, 0, 0                      
+				
+				    ret
+ 0000016A			printConsole ENDP
+				
+				end main                                                            
+Microsoft (R) Macro Assembler Version 14.44.35217.0	    12/16/25 15:14:21
+SE_asm01e.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CONST  . . . . . . . . . . . . .	32 Bit	 00000008 Para	  Public  'CONST'	 ReadOnly
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000104 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000016A Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetStdHandle . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+SetConsoleCP . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+SetConsoleOutputCP . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+SetConsoleTitleA . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+WriteConsoleA  . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+int_to_char  . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000056 Public STDCALL
+  pstr . . . . . . . . . . . . .	DWord	 bp + 00000008
+  intfield . . . . . . . . . . .	DWord	 bp + 0000000C
+  convert_positive . . . . . . .	L Near	 0000001C _TEXT	
+  convert_loop . . . . . . . . .	L Near	 00000027 _TEXT	
+  store_digits . . . . . . . . .	L Near	 00000031 _TEXT	
+  store_zero . . . . . . . . . .	L Near	 00000046 _TEXT	
+main . . . . . . . . . . . . . .	P Near	 00000056 _TEXT	Length= 000000D7 Public STDCALL
+  START  . . . . . . . . . . . .	L Near	 00000056 _TEXT	
+printConsole . . . . . . . . . .	P Near	 0000012D _TEXT	Length= 0000003D Public STDCALL
+  pstr . . . . . . . . . . . . .	DWord	 bp + 00000008
+  ptitle . . . . . . . . . . . .	DWord	 bp + 0000000C
+  count  . . . . . . . . . . . .	L Near	 0000014C _TEXT	
+system . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+Array  . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+consoleTitle . . . . . . . . . .	Byte	 00000028 _DATA	
+endl . . . . . . . . . . . . . .	Number	 0000000Ah   
+get_pause  . . . . . . . . . . .	L Near	 00000000 FLAT	External STDCALL
+getmax . . . . . . . . . . . . .	L Near	 00000000 FLAT	External STDCALL
+getmin . . . . . . . . . . . . .	L Near	 00000000 FLAT	External STDCALL
+max_string . . . . . . . . . . .	Byte	 000000B4 _DATA	
+max_str  . . . . . . . . . . . .	Byte	 000000CC _DATA	
+max  . . . . . . . . . . . . . .	DWord	 000000FC _DATA	
+messageSize  . . . . . . . . . .	DWord	 000000F4 _DATA	
+min_string . . . . . . . . . . .	Byte	 00000075 _DATA	
+min_str  . . . . . . . . . . . .	Byte	 0000008C _DATA	
+min  . . . . . . . . . . . . . .	DWord	 000000F8 _DATA	
+result . . . . . . . . . . . . .	DWord	 00000100 _DATA	
+str_endl . . . . . . . . . . . .	Byte	 00000000 CONST	
+str_pause  . . . . . . . . . . .	Byte	 00000002 CONST	
+string . . . . . . . . . . . . .	Byte	 0000004D _DATA	
+text . . . . . . . . . . . . . .	Byte	 00000032 _DATA	
+
+	   0 Warnings
+	   0 Errors

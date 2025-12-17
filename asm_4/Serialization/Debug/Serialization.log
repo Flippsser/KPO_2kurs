@@ -1,0 +1,5 @@
+﻿  Serializer.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\asm_4\Serialization\Serializer.cpp(15,35): warning C4267: инициализация: преобразование из "size_t" в "unsigned char"; возможна потеря данных
+  Source.cpp
+  Создание кода...
+  Serialization.vcxproj -> C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\asm_4\Debug\Serialization.exe

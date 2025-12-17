@@ -1,0 +1,21 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (SE_Lab17.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Error.cpp
+  FST.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\FST.cpp(82,23): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  IT.cpp
+  In.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\In.cpp(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\In.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  LT.cpp
+  Lab_17.cpp
+  Lexer.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\LT.h(33,21): warning C4838: Преобразование из "unsigned int" в "int" требует сужающего преобразования.
+  (компиляция исходного файла "Lexer.cpp")
+  
+  Log.cpp
+  Out.cpp
+  Parm.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\Parm.cpp(51,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\SE_Lab17\Parm.cpp(62,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  Создание кода...
+  SE_Lab17.vcxproj -> C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_17\x64\Debug\Lab_17.exe
