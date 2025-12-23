@@ -1,0 +1,4 @@
+﻿  laba20.cpp
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_20\laba20\laba20.cpp(9,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_20\laba20\laba20.cpp(22,14): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  laba20.vcxproj -> C:\Users\Misha\Desktop\FIT\Second_Kurs\KPO 2 kurs\labs\Lab_20\x64\Debug\laba20.exe
